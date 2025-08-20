@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: revenue_metrics
+    description: Daily revenue and monetization metrics
+    columns:
+      - name: purchase_date_only
+        description: Date of purchase activity
+        tests:
+          - not_null
+          - unique
+      - name: daily_revenue
+        description: Total revenue generated on this date
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+      - name: daily_buyers
+        description: Number of unique buyers on this date
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+      - name: arpu
+        description: Average revenue per user
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+      - name: arppu
+        description: Average revenue per paying user
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+      - name: conversion_rate
+        description: Percentage of players who made purchases
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1

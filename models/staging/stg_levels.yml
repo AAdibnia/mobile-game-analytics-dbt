@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: stg_levels
+    description: Cleaned level completion and progression data
+    columns:
+      - name: level_id
+        description: Unique level attempt identifier
+        tests:
+          - unique
+          - not_null
+      - name: player_id
+        description: Player who attempted the level
+        tests:
+          - not_null
+      - name: level_number
+        description: The level number attempted
+        tests:
+          - not_null
+      - name: completed
+        description: Whether the level was successfully completed
+        tests:
+          - not_null
+      - name: completion_time_seconds
+        description: Time taken to complete the level
+        tests:
+          - not_null
+      - name: score
+        description: Score achieved in the level
+        tests:
+          - not_null
+      - name: difficulty_tier
+        description: Level difficulty classification
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Tutorial', 'Easy', 'Medium', 'Hard']
+      - name: completion_category
+        description: Performance classification for completed levels
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Fast', 'Normal', 'Slow', 'Failed']

@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: daily_player_stats
+    description: Daily aggregated player statistics (incremental model)
+    config:
+      materialized: incremental
+    columns:
+      - name: player_id
+        description: Player identifier
+        tests:
+          - not_null
+      - name: stats_date
+        description: Date of the statistics
+        tests:
+          - not_null
+      - name: total_spent
+        description: Total amount spent by player on this date
+        tests:
+          - not_null
+      - name: sessions_count
+        description: Number of sessions on this date
+        tests:
+          - not_null
+
+  - name: retention_cohorts
+    description: Weekly player retention cohort analysis
+    columns:
+      - name: cohort_week
+        description: Week when cohort was acquired
+        tests:
+          - not_null
+      - name: cohort_size
+        description: Number of players in cohort
+        tests:
+          - not_null
+      - name: day_1_retention
+        description: Percentage of players retained after 1 day
+        tests:
+          - not_null
+      - name: day_7_retention
+        description: Percentage of players retained after 7 days
+        tests:
+          - not_null
+      - name: day_30_retention
+        description: Percentage of players retained after 30 days
+        tests:
+          - not_null

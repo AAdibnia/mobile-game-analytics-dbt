@@ -1,0 +1,46 @@
+version: 2
+
+snapshots:
+  - name: player_profile_snapshot
+    description: Historical tracking of player profile changes (SCD Type 2)
+    config:
+      target_schema: snapshots
+      strategy: timestamp
+      updated_at: updated_at
+    columns:
+      - name: player_id
+        description: Unique player identifier
+        tests:
+          - not_null
+      - name: dbt_scd_id
+        description: Unique identifier for each snapshot record
+        tests:
+          - unique
+          - not_null
+      - name: dbt_updated_at
+        description: Timestamp when record was updated
+        tests:
+          - not_null
+      - name: dbt_valid_from
+        description: Start date for this version of the record
+        tests:
+          - not_null
+      - name: current_level
+        description: Player's current level at time of snapshot
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 100
+      - name: vip_status
+        description: Player's VIP status at time of snapshot
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['free', 'premium', 'vip']
+      - name: player_tier
+        description: Derived player tier classification
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Free', 'Premium', 'VIP', 'Unknown']

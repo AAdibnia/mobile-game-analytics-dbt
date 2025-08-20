@@ -1,0 +1,50 @@
+version: 2
+
+sources:
+  - name: raw_data
+    description: Raw gaming data from various sources
+    tables:
+      - name: players
+        description: Player registration and profile information
+        columns:
+          - name: player_id
+            description: Unique player identifier
+            tests:
+              - unique
+              - not_null
+          - name: registration_date
+            description: Date when player registered
+            tests:
+              - not_null
+      - name: sessions  
+        description: Game session tracking data
+        columns:
+          - name: session_id
+            description: Unique session identifier
+            tests:
+              - unique
+              - not_null
+          - name: player_id
+            description: Player who had this session
+            tests:
+              - not_null
+      - name: purchases
+        description: In-app purchase transactions
+        columns:
+          - name: purchase_id
+            description: Unique purchase identifier
+            tests:
+              - unique
+              - not_null
+          - name: amount_usd
+            description: Purchase amount in USD
+            tests:
+              - not_null
+      - name: levels
+        description: Level completion and progression events
+        columns:
+          - name: level_id
+            description: Unique level attempt identifier
+            tests:
+              - unique
+              - not_null

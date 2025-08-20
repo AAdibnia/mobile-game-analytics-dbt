@@ -1,0 +1,11 @@
+purchase_id,player_id,purchase_date,item_type,item_name,amount_usd,currency_type
+p001,1001,2024-01-20 15:30:00,currency,gold_pack_medium,4.99,USD
+p002,1003,2024-01-22 10:15:00,weapon,legendary_sword,9.99,USD
+p003,1005,2024-01-25 14:45:00,currency,gold_pack_large,19.99,USD
+p004,1001,2024-01-26 09:30:00,booster,exp_booster_1h,2.99,USD
+p005,1007,2024-01-26 16:20:00,weapon,epic_bow,7.99,USD
+p006,1009,2024-01-28 11:45:00,currency,gold_pack_mega,49.99,USD
+p007,1003,2024-01-28 13:15:00,booster,luck_booster_2h,1.99,USD
+p008,1005,2024-01-29 17:30:00,weapon,mythic_staff,24.99,USD
+p009,1001,2024-01-29 19:45:00,currency,gold_pack_small,0.99,USD
+p010,1007,2024-01-30 12:20:00,booster,speed_booster_30m,1.49,USD

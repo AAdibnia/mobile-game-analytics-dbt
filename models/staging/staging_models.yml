@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: stg_players
+    description: Cleaned player profile data with derived metrics
+    columns:
+      - name: player_id
+        description: Unique identifier for each player
+        tests:
+          - unique
+          - not_null
+      - name: registration_date
+        description: Date when player registered
+        tests:
+          - not_null
+      - name: player_tier
+        description: Player tier based on VIP status
+        tests:
+          - accepted_values:
+              values: ['Free', 'Premium', 'VIP', 'Unknown']
+      - name: days_since_registration
+        description: Number of days since player registered
+        tests:
+          - not_null
+
+  - name: stg_sessions
+    description: Cleaned session data with engagement metrics
+    columns:
+      - name: session_id
+        description: Unique session identifier
+        tests:
+          - unique
+          - not_null
+      - name: player_id
+        description: Player who had this session
+        tests:
+          - not_null
+      - name: session_duration_minutes
+        description: Length of session in minutes
+        tests:
+          - not_null
+
+  - name: stg_purchases
+    description: Cleaned purchase transaction data
+    columns:
+      - name: purchase_id
+        description: Unique purchase identifier
+        tests:
+          - unique
+          - not_null
+      - name: amount_usd
+        description: Purchase amount in USD
+        tests:
+          - not_null
