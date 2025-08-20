@@ -12,7 +12,7 @@
     SCD Strategy: Timestamp-based change detection
     
     Author: Ali Adibnia
-    Created: 2024
+    Created: 2025
 */
 
 {% snapshot player_profile_snapshot %}

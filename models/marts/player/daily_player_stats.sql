@@ -12,7 +12,7 @@
     Incremental Strategy: Only process new dates since last run
     
     Author: Ali Adibnia
-    Created: 2024
+    Created: 2025
 */
 
 {{

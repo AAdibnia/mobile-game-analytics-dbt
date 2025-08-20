@@ -10,7 +10,7 @@
     - Calculate player tenure for lifecycle analysis
     
     Author: Ali Adibnia
-    Created: 2024
+    Created: 2025
 */
 
 {{
