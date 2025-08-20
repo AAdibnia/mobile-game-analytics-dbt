@@ -21,6 +21,7 @@
 }}
 
 select
+    -- Primary identifiers
     player_id,
     registration_date::date as registration_date,
     country,
@@ -29,7 +30,7 @@ select
     vip_status,
     updated_at::timestamp as updated_at,
     
-    -- Derived fields
+    -- Business tier classifications
     case 
         when vip_status = 'free' then 'Free'
         when vip_status = 'premium' then 'Premium' 
@@ -37,6 +38,7 @@ select
         else 'Unknown'
     end as player_tier,
     
+    -- Level-based player segmentation
     case 
         when current_level <= 10 then 'Beginner'
         when current_level <= 30 then 'Intermediate'
@@ -44,7 +46,7 @@ select
         else 'Expert'
     end as player_level_tier,
     
-    -- Days since registration  
+    -- Player lifecycle metrics
     date_diff('day', registration_date::date, current_date()) as days_since_registration
 
 from {{ ref('players') }}
