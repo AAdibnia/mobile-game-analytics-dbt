@@ -1,0 +1,45 @@
+name: 'mobile_game_analytics'
+version: '1.0.0'
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'mobile_game_analytics'
+
+# These configurations specify where dbt should look for different types of files.
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"  
+clean-targets:         
+  - "target"
+  - "dbt_packages"
+
+# Configuring models
+models:
+  mobile_game_analytics:
+    # Apply to all models
+    +materialized: table
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
+      player:
+        +materialized: table
+      economy:
+        +materialized: table
+
+snapshots:
+  mobile_game_analytics:
+    +target_schema: snapshots
+    +strategy: timestamp
+    +updated_at: updated_at
+
+vars:
+  # Gaming business logic variables
+  new_player_days: 7
+  whale_threshold: 100
+  session_timeout_minutes: 30
