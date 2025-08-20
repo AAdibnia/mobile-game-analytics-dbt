@@ -1,6 +1,22 @@
+/*
+    Player Profile Staging Model
+    
+    Purpose: Clean and standardize raw player registration data
+    Source: {{ ref('players') }}
+    
+    Business Logic:
+    - Standardize VIP status categories for consistent reporting
+    - Create player level tiers for segmentation analysis
+    - Calculate player tenure for lifecycle analysis
+    
+    Author: Ali Adibnia
+    Created: 2024
+*/
+
 {{
   config(
-    materialized='view'
+    materialized='view',
+    description='Cleaned player profile data with derived business metrics'
   )
 }}
 

@@ -1,8 +1,26 @@
+/*
+    Daily Player Statistics (Incremental Model)
+    
+    Purpose: Efficiently aggregate daily player activity metrics
+    Sources: stg_sessions, stg_purchases
+    
+    Business Logic:
+    - Combine session and purchase data by player and date
+    - Use incremental strategy for performance on large datasets
+    - Track daily engagement and monetization patterns
+    
+    Incremental Strategy: Only process new dates since last run
+    
+    Author: Ali Adibnia
+    Created: 2024
+*/
+
 {{
   config(
     materialized='incremental',
     unique_key=['player_id', 'stats_date'],
-    on_schema_change='fail'
+    on_schema_change='fail',
+    description='Daily aggregated player statistics optimized for performance'
   )
 }}
 

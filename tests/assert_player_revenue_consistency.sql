@@ -1,5 +1,17 @@
--- Test to ensure revenue calculations are consistent between models
--- This test checks that total revenue in player_summary matches purchases data
+/*
+    Data Quality Test: Revenue Consistency
+    
+    Purpose: Ensure revenue calculations are consistent across models
+    Business Rule: Total spending in player_summary must match sum of purchases
+    
+    Test Logic:
+    - Compare aggregated spending from daily_player_stats vs raw purchases
+    - Flag any discrepancies > $0.01 (accounting for rounding)
+    - Should return 0 rows if all revenue calculations are accurate
+    
+    Author: Ali Adibnia
+    Created: 2024
+*/
 
 select 
     ps.player_id,
