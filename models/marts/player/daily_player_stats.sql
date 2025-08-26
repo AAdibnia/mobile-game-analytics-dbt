@@ -9,10 +9,6 @@
     - Use incremental strategy for performance on large datasets
     - Track daily engagement and monetization patterns
     
-    Incremental Strategy: Only process new dates since last run
-    
-    Author: Ali Adibnia
-    Created: 2025
 */
 
 {{
