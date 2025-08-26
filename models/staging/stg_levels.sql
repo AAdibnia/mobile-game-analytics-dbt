@@ -9,9 +9,6 @@
     - Categorize attempts by completion speed and difficulty
     - Calculate performance ratios for progression analysis
     - Support funnel analysis and difficulty balancing
-    
-    Author: Ali Adibnia
-    Created: 2025
 */
 
 {{
