@@ -8,9 +8,6 @@
     - Aggregate all player activity across sessions, purchases, and levels
     - Calculate key player metrics (LTV, engagement, progression)
     - Classify players by monetization status and engagement level
-    
-    Author: Ali Adibnia
-    Created: 2025
 */
 
 {{
