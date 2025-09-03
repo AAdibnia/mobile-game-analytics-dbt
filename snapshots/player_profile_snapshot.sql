@@ -10,9 +10,6 @@
     - Support point-in-time reporting for business metrics
     
     SCD Strategy: Timestamp-based change detection
-    
-    Author: Ali Adibnia
-    Created: 2025
 */
 
 {% snapshot player_profile_snapshot %}
