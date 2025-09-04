@@ -8,7 +8,6 @@
     - Combine session and purchase data by player and date
     - Use incremental strategy for performance on large datasets
     - Track daily engagement and monetization patterns
-    
 */
 
 {{
