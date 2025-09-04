@@ -14,7 +14,6 @@
   config(
     materialized='incremental',
     unique_key=['player_id', 'stats_date'],
-    on_schema_change='fail',
     description='Daily aggregated player statistics optimized for performance'
   )
 }}
