@@ -41,5 +41,4 @@ This project demonstrates key gaming analytics patterns using dbt:
 - **DAU/MAU**: Daily and monthly active users
 - **Retention**: Day 1, 7, 30 retention rates  
 - **ARPU/ARPPU**: Average revenue per user/paying user
-- **LTV**: Player lifetime value by acquisition cohort
 - **Progression**: Level completion rates and progression funnels
